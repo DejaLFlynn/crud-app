@@ -6,5 +6,16 @@ CREATE TABLE person (
     street_address varchar(50) NOT NULL,
     city varchar(50) NOT NULL,
     state varchar(2) NOT NULL,
-    zip_code varchar(5) NOT NULL
+    zip_code varchar(5) NOT NULL,
+    company_id integer REFERENCES company (compnany_id)
 );
+
+CREATE TABLE company(
+    company_id SERIAL PRIMARY KEY,
+    company_name varchar(50) NOT NULL,  
+    website varchar(50) NOT NULL,
+    phone varchar(50) NOT NULL,
+    mailing_address varchar(50) NOT NULL
+
+);
+

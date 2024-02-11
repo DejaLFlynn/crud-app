@@ -26,7 +26,7 @@ public class JdbcCompanyDao implements CompanyDao {
     private static final String SQL_UPDATE_COMPANY = "UPDATE company SET (company_name, website, phone, mailing_address)"
                                                   + " = (:companyName, :website, :phone, :mailingAddress)"
                                                   + " WHERE company_id = :companyId";
-    private static final String SQL_CREATE_PERSON = "INSERT INTO company (company_name, website, phone, mailing_address)"
+    private static final String SQL_CREATE_COMPANY = "INSERT INTO company (company_name, website, phone, mailing_address)"
                                                   + " VALUES (:companyName, :website, :phone, :mailingAddress)";
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -43,7 +43,7 @@ public class JdbcCompanyDao implements CompanyDao {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public Company readPerson(Integer companyId) {
+    public Company readCompany(Integer companyId) {
         return namedParameterJdbcTemplate.queryForObject(SQL_READ_COMPANY, Collections.singletonMap("companyId", companyId), new CompanyRowMapper());
     }
 

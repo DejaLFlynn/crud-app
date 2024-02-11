@@ -16,13 +16,13 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("company")
-public class companyController {
+public class CompanyController {
 
     public static final String COMMAND_DELETE = "Delete";
 
     private final CompanyService companyService;
 
-    public companyController(CompanyService companyService) {
+    public CompanyController(CompanyService companyService) {
         this.companyService = companyService;
     }
 
@@ -34,7 +34,7 @@ public class companyController {
     @GetMapping(value = "list")
     public ModelAndView list() {
         ModelAndView mav = new ModelAndView("company/list");
-        mav.addObject("companies", companyService.listCompany()); //.listPeople
+        mav.addObject("companies", companyService.listCompanies()); 
         return mav;
     }
 

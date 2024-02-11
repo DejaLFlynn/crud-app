@@ -17,49 +17,49 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class DefaultCompanyService implements CompanyService {
 
-    private final CompanyDao personDao;
+    private final CompanyDao companyDao;
     private final Validator validator;
 
-    public DefaultCompanyService(CompanyDao personDao, Validator validator) {
-        this.personDao = personDao;
+    public DefaultCompanyService(CompanyDao companyDao, Validator validator) {
+        this.companyDao = companyDao;
         this.validator = validator;
     }
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public List<Person> listPeople() {
-        return personDao.listPeople();
+    public List<Company> listCompanies() {
+        return companyDao.listCompanies();
     }
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public Person readPerson(Integer id) {
-        return personDao.readPerson(id);
+    public Company readCompany(Integer id) {
+        return companyDao.readCompany(id);
     }
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = false)
-    public Integer createPerson(Person person) {
-        return personDao.createPerson(person);
+    public Integer createCompany(Company company) {
+        return companyDao.createCompany(company);
     }
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = false)
-    public void updatePerson(Person person) {
-        personDao.updatePerson(person);
+    public void updateCompany(Company company) {
+        companyDao.updateCompany(company);
     }
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = false)
-    public void deletePerson(Integer id) {
-        personDao.deletePerson(id);
+    public void deleteCompany(Integer id) {
+        companyDao.deleteCompany(id);
     }
 
     @Override
-    public List<String> validatePerson(Person person) {
-        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+    public List<String> validateCompany(Company company) {
+        Set<ConstraintViolation<Company>> violations = validator.validate(company);
         List<String> errors = new ArrayList<String>(violations.size());
-        for (ConstraintViolation<Person> violation : violations) {
+        for (ConstraintViolation<Company> violation : violations) {
             errors.add(violation.getMessage());
         }
         Collections.sort(errors);

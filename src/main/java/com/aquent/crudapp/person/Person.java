@@ -38,6 +38,10 @@ public class Person {
     @Size(min = 5, max = 5, message = "Zip code is required with length 5")
     private String zipCode;
 
+    @NotNull
+    @Size(min = 5, max = 5, message = "Company id required")
+    private String company_id;
+
     public Integer getPersonId() {
         return personId;
     }
@@ -100,5 +104,13 @@ public class Person {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getCompanyId() {
+        return company_id;
+    }
+
+    public void setCompanyId(String company_id) {
+        this.company_id = company_id;
     }
 }

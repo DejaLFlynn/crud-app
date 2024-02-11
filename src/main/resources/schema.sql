@@ -13,7 +13,8 @@ CREATE TABLE person (
 CREATE TABLE company(
    company_id SERIAL PRIMARY KEY,
    company_name varchar(50) NOT NULL,  
-   website varchar(50) NOT NULL,    phone varchar(50) NOT NULL,
+   website varchar(50) NOT NULL,   
+   phone varchar(50) NOT NULL,
    mailing_address varchar(50) NOT NULL
 
 );

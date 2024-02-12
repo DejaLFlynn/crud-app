@@ -1,0 +1,18 @@
+.basic-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.basic-table th, .basic-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.basic-table th {
+    background-color: #41a865;
+}
+
+.basic-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

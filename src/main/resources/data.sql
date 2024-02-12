@@ -1,7 +1,27 @@
-DROP DATABASE IF EXISTS aquent_data;
-CREATE DATABASE aquent_data;
+-- DROP DATABASE IF EXISTS aquent_data;
+-- CREATE DATABASE aquent_data;
 
-\c aquent_data
+-- \c aquent_data
+
+INSERT INTO company(
+    company_name,  
+    website,
+    phone,
+    mailing_address
+) 
+VALUES (
+    'Spotify',
+    'spotify.com',
+    '1235556789',
+    '123 Fake Project Ln.'
+    
+), (
+    'Meta',
+    'Meta.com',
+    '3215559876',
+    '456 Fake Project Ln.' 
+);
+
 
 INSERT INTO person (
     first_name,
@@ -31,24 +51,5 @@ INSERT INTO person (
     'NC',
     '28801',
     '2'
-);
-
-INSERT INTO company(
-    company_name,  
-    website,
-    phone,
-    mailing_address
-) 
-VALUES (
-    'Spotify',
-    'spotify.com',
-    '1235556789',
-    '123 Fake Project Ln.'
-    
-), (
-    'Meta',
-    'Meta.com',
-    '3215559876',
-    '456 Fake Project Ln.' 
 );
 

@@ -28,6 +28,7 @@ public class JdbcCompanyDao implements CompanyDao {
                                                   + " WHERE company_id = :companyId";
     private static final String SQL_CREATE_COMPANY = "INSERT INTO company (company_name, website, phone, mailing_address)"
                                                   + " VALUES (:companyName, :website, :phone, :mailingAddress)";
+    private static final String SQL_LIST_CONTACTS = "SELECT (person.person_id, person.first_name, person.last_name FROM person JOIN company ON (person.person_id = company_id) ";
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -67,6 +68,12 @@ public class JdbcCompanyDao implements CompanyDao {
         return keyHolder.getKey().intValue();
     }
 
+    //Joins both tables at the person id to be available in a list on company page 
+    // @Override
+    // @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    // public List<Company> listContactList() {
+    //     return namedParameterJdbcTemplate.getJdbcOperations().query(SQL_LIST_CONTACTS, new CompanyRowMapper());
+    // }
     /**
      * Row mapper for company records. multiple companies whole row
      */
@@ -80,6 +87,8 @@ public class JdbcCompanyDao implements CompanyDao {
             company.setWebsite(rs.getString("website"));
             company.setPhone(rs.getString("phone"));
             company.setMailingAddress(rs.getString("mailing_address"));
+            // company.setContactList(rs.getInt("company_id")); // setting the contact list in row mapper
+
            
             return company;
         }

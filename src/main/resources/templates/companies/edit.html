@@ -16,7 +16,7 @@
         </th:block>
       </ul>
     </th:block>
-    <form action="/person/edit" method="POST">
+    <form action="/person/edit" method="PATCH">
       <input type="hidden" name="personId" th:value="${person.personId}"/>
       <br/>
       <label for="firstName">First Name:</label>

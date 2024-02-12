@@ -58,11 +58,15 @@ public class Company {
         this.phone = phone;
     }
 
-    public String getMailingAdress() {
+    public String getMailingAddress() {
         return mailing_address;
     }
 
     public void setMailingAddress(String mailing_address) {
         this.mailing_address = mailing_address;
     }
+    //returns list of contacts from company 
+    // public void setContactList() {
+    //     return companyId;
+    // }
 }

@@ -35,6 +35,7 @@ public class CompanyController {
     public ModelAndView list() {
         ModelAndView mav = new ModelAndView("company/list");
         mav.addObject("companies", companyService.listCompanies()); 
+        // mav.addObject("companies", JdbcCompanyDao.listContactList()); //refers to the file and the function that joins tables
         return mav;
     }
 

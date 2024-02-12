@@ -1,5 +1,6 @@
 package com.aquent.crudapp;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,6 +17,6 @@ public class HomeController {
      */
     @GetMapping("/")
     public String index() {
-        return "redirect:/person/list"; // needs to be home with companies and people 
+        return "/home"; 
     }
 }

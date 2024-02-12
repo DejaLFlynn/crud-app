@@ -5,6 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Company Listing</title>
+    <link rel="style" type="css/text" href="resources/static/style.css">
   </head>
   <body>
     <h1>Company Listing</h1>
@@ -13,18 +14,18 @@
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
-            <th>Actions</th>
+            <th>Company Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Website</th>
           </tr>
         </thead>
         <tbody>
-          <th:block th:each="person : ${persons}">
+          <th:block th:each="company : ${companies}">
             <tr>
-              <td th:text="${person.firstName}">First</td>
-              <td th:text="${person.lastName}">Last</td>
-              <td th:text="${person.emailAddress}">first.last@email.com</td>
+              <td th:text="${company.companyName}">Company Name</td>
+              <td th:text="${company.lastName}">Phone</td>
+              <td th:text="${company.website}">website</td>
               <td>
                 <a th:href="'/company/edit/' + ${company.companyId}">Edit Company</a>
                 <a th:href="'/company/delete/' + ${company.companyId}">Delete Company</a>

@@ -5,11 +5,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Person Listing</title>
-    <link rel="style" type="css/text" href="resources/static/style.css">
+    <link rel="style" type="css/text" href="../../static/list.css">
 
   </head>
-  <body>
-    <h1>Person Listing</h1>
+  <body className="listBody">
+    <h1 >Person Listing</h1>
     <p><a href="/person/create">Create New Person</a></p>
     <th:block th:unless="${#lists.isEmpty(persons)}">
       <table>

@@ -1,0 +1,41 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Company Listing</title>
+        <link rel="stylesheet" type="css/text" href="../../static/list.css">
+    </head>
+    <body>
+    <h1 >Company Listing</h1>
+    <p><a href="/company/create">Create New Company</a></p>
+    <table>
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="company : ${companies}">
+              <tr>
+                <td>Company Name</td>
+                <td>Phone</td>
+                <td>website</td>
+                <td>
+                  <a href="'/company/edit/' + ${company.companyId}">Edit Company</a>
+                  <a href="'/company/delete/' + ${company.companyId}">Delete Company</a>
+                </td>
+              </tr>
+            </th:block>
+          </tbody>
+        </table>
+    </th:block>
+    <th:block th:if="${#lists.isEmpty(companies)}">
+        <p>No results found.</p>
+      </th:block>
+    </body>
+</html>

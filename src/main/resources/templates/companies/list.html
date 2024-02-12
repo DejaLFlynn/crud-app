@@ -2,13 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-  <head>
+  <!-- <div class="mainListDiv"> -->
+      <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Company Listing</title>
-    <link rel="style" type="css/text" href="resources/static/style.css">
+    <link rel="stylesheet" type="css/text" href="../../static/list.css">
+    <!-- <link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" /> -->
   </head>
-  <body>
-    <h1>Company Listing</h1>
+  <!-- <body class="listBody"> -->
+    <h1 >Company Listing</h1>
     <p><a href="/company/create">Create New Company</a></p>
     <th:block th:unless="${#lists.isEmpty(companies)}">
       <table>
@@ -38,5 +40,5 @@
     <th:block th:if="${#lists.isEmpty(companies)}">
       <p>No results found.</p>
     </th:block>
-  </body>
+
 </html>
